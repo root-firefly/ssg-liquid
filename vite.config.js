@@ -2,7 +2,6 @@ import { defineConfig, loadEnv } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import VueSchema from '@rfirefly/vite-plugin-schema'
 import { createHtmlPlugin } from 'vite-plugin-html'
-import Inspect from 'vite-plugin-inspect'
 
 const config = defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.')
@@ -27,7 +26,6 @@ const config = defineConfig(({ mode }) => {
           ],
         },
       }),
-      Inspect(),
     ],
     ssgOptions: {
       script: 'async',
