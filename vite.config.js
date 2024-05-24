@@ -2,6 +2,7 @@ import { defineConfig, loadEnv } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import VueSchema from '@rfirefly/vite-plugin-schema'
 import { createHtmlPlugin } from 'vite-plugin-html'
+import UnoCSS from 'unocss/vite'
 
 const config = defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.')
@@ -11,6 +12,7 @@ const config = defineConfig(({ mode }) => {
     plugins: [
       Vue(),
       VueSchema(),
+      UnoCSS(),
       createHtmlPlugin({
         filename: 'index.html',
         entry: 'src/main.js',
@@ -36,12 +38,26 @@ const config = defineConfig(({ mode }) => {
       replaceDir: env.VITE_REPLACE_PATH,
       entry: 'src/main.js',
     },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@import \'@/assets/response.scss\';',
+        },
+      },
+    },
+    resolve: {
+      alias: {
+        '@': '/src',
+      },
+    },
     build: {
       rollupOptions: {
         output: {
           manualChunks(id) {
             if (id.includes('@vue'))
               return 'vue'
+            if (id.includes('node_modules'))
+              return 'others'
           },
           chunkFileNames: `lt-chunk-[name].js`,
           entryFileNames: `${env.VITE_APP_PREFIX}[name].js`,

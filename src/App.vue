@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <h2>Hello</h2>
+  <div class="imc">
   </div>
 </template>
 
@@ -8,15 +7,50 @@
 
 </script>
 
-<style>
-h2 {
-  padding: 4em 8em;
-  font-family: sans-serif;
+<style lang="scss">
+.imc {
+  --primary-color: #6D2C3C;
+  line-height: 1.09;
+
+  .section-wapper {
+    background-color: var(--bg-c);
+    padding-block: 20px 25px;
+
+    @include wrd('md') {
+      padding-block: 40px 75px;
+    }
+  }
+
+  .section-container {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1440px;
+    width: 90vw;
+
+    @include wrd('md') {
+      // width: 60vw;
+    }
+  }
+
+  h2 {
+    font-weight: bold;
+    color: #fff;
+  }
+
+  h2+p {
+    color: #fff;
+  }
 }
 </style>
 
 <schema lang="json">
 {
-  "name": "adsa"
+  "name": "Lute Imc Landing Page",
+  "presets": [
+    {
+      "name": "Lute Imc Landing Page",
+      "blocks": []
+    }
+  ]
 }
 </schema>

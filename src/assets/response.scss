@@ -1,0 +1,127 @@
+$breakpoints: ('phone': (320px,
+    480px,
+  ),
+  'pad': (481px,
+    768px,
+  ),
+  'notebook': (768px,
+    1024px,
+  ),
+  'desktop': (1025px,
+    1200px,
+  ),
+  'tv': 1201px,
+);
+
+@mixin respond-to($breakname) {
+  $bp: map-get($breakpoints, $breakname);
+
+  @if type-of($bp)=='list' {
+    $min: nth($bp, 1);
+    $max: nth($bp, 2);
+
+    @media only screen and (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  }
+
+  @else {
+    @media (min-width: $bp) {
+      @content;
+    }
+  }
+}
+
+$dbreakpoints: ('phone': 480px,
+  'pad': 768px,
+  'notebook': 991px,
+  'desktop': 1400px,
+  'tv': 1401px,
+);
+
+@mixin drespond-to($breakname) {
+  $bp: map-get($dbreakpoints, $breakname);
+
+  @media (max-width: $bp) {
+    @content;
+  }
+}
+
+// 与主题配置一致
+$ltdrbreakpoints: ('phone': 767px,
+  'pt': (768px,
+    1024px,
+  ),
+  'tablet': 1024px,
+  'desktop': 1025px,
+);
+
+@mixin ltdr($breakname) {
+  $bp: map-get($ltdrbreakpoints, $breakname);
+
+  @if $breakname=='desktop' {
+    @media (min-width: 1025px) {
+      @content;
+    }
+  }
+
+  @if $breakname=='pt' {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  }
+
+  @if $breakname=='tablet' {
+    @media (min-width: 768px) and (max-width: 1024px) {
+      @content;
+    }
+  }
+
+  @if $breakname=='phone' {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+}
+
+// tailwindcss中的断点
+@mixin wrd($breakname) {
+
+  @if $breakname=='sm' {
+    @media (min-width: 640px) {
+      @content;
+    }
+  }
+
+  @if $breakname=='md' {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $breakname=='lg' {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  }
+
+  @if $breakname=='xl' {
+    @media (min-width: 1280px) {
+      @content;
+    }
+  }
+
+  @if $breakname=='2xl' {
+    @media (min-width: 1536px) {
+      @content;
+    }
+  }
+
+
+}
+
+@mixin ctn($info) {
+  @container (#{$info}) {
+    @content;
+  }
+}
