@@ -1,6 +1,5 @@
 <template>
-  <div class="imc">
-  </div>
+  hello
 </template>
 
 <script setup>
@@ -11,6 +10,7 @@
 .imc {
   --primary-color: #6D2C3C;
   line-height: 1.09;
+  font-family: Montserrat;
 
   .section-wapper {
     background-color: var(--bg-c);
@@ -22,14 +22,11 @@
   }
 
   .section-container {
+    --max-w: 90vw;
     position: relative;
     margin: 0 auto;
     max-width: 1440px;
-    width: 90vw;
-
-    @include wrd('md') {
-      // width: 60vw;
-    }
+    width: var(--max-w);
   }
 
   h2 {
@@ -45,10 +42,11 @@
 
 <schema lang="json">
 {
-  "name": "Lute Imc Landing Page",
+  "name": "",
+  "settings": [],
   "presets": [
     {
-      "name": "Lute Imc Landing Page",
+      "name": "",
       "blocks": []
     }
   ]

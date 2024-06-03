@@ -1,7 +1,7 @@
 {
   "name": "@refirefly/vite-liquid",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "vite-ssg",
   "scripts": {
     "dev": "vite",
@@ -14,15 +14,20 @@
     "vue": "^3.4.25"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.15.0",
-    "@rfirefly/vite-plugin-schema": "^1.0.1",
-    "@rfirefly/vite-ssg": "^1.0.2",
+    "@antfu/eslint-config": "^2.19.0",
+    "@rfirefly/vite-plugin-schema": "^1.0.3",
+    "@rfirefly/vite-ssg": "1.1.0",
     "@types/node": "^20.12.12",
+    "@unocss/preset-icons": "^0.60.3",
+    "@unocss/reset": "^0.60.3",
     "@vitejs/plugin-vue": "^5.0.4",
     "cross-env": "^7.0.3",
     "eslint": "^9.1.1",
+    "sass": "^1.77.2",
     "typescript": "^5.4.5",
+    "unocss": "^0.60.3",
     "vite": "^5.2.10",
+    "vite-plugin-cdn-import": "^1.0.1",
     "vite-plugin-html": "^3.2.2"
   }
 }

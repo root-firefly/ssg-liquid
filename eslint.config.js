@@ -13,6 +13,8 @@ export default antfu(
       'vue/block-order': ['error', {
         order: [['template', 'script'], 'style'],
       }],
+      'vue/html-self-closing': 'off',
+      'no-console': 'off',
     },
   },
 )

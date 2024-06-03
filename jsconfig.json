@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
     "target": "ESNext",
     "lib": [
-      "ESNext"
+      "ESNext",
+      "DOM"
     ],
     "module": "ESNext",
     "moduleResolution": "Bundler",
@@ -11,6 +13,11 @@
       "vite/client",
       "node"
     ],
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
     "allowJs": true,
     "strict": true,
     "strictNullChecks": true,
